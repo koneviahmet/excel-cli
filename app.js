@@ -20,8 +20,9 @@ let secilenStunlar    = process.argv.splice(4,process.argv.length - 4);
 /* dosya okumalarını asenkron yapacağız */
 async function asenkronAkis(){
 
+  let genelText = "";
   await readXlsxFile(txtName).then((rows) => {
-    let genelText = "";
+
     rows.forEach((item, ix) => {
 
       let altText = "";
@@ -36,9 +37,13 @@ async function asenkronAkis(){
     });
 
 
-    console.log(genelText);
+    //console.log(genelText);
 
   });
+
+
+  /* önemli not: her defasında altına ekleyerek gidiyor. */
+  await afs.createFile('sonuc.txt', genelText);
 
 
 }
