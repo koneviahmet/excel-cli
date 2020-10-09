@@ -1,0 +1,21 @@
+{
+  "name": "excel-cli",
+  "version": "1.0.0",
+  "description": "",
+  "main": "app.js",
+  "bin": {
+    "excel-cli": "./app.js"
+  },
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "lodash": "^4.17.20",
+    "ncp": "^2.0.0",
+    "read-excel-file": "^4.0.7",
+    "slash": "^3.0.0"
+  }
+}
