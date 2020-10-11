@@ -54,3 +54,16 @@ sonunda 4 numaralı sutunu ekle demek
 > -add md5 4
 
 4 numaralı sutunu alır ve md5 ile şifreler sonra satırın sonuna ekler
+
+> -add left 4 <eklencek kelim>
+
+4 numaralı sutnunu alır önüne kelime ekleyerek yeni satır oluşturur
+
+> -add right 4 <eklenecek kelime>
+
+4 numaralı sutnunu alır sonuna kelime ekleyerek yeni satır oluşturur
+
+
+> -add center 4 <başa eklenecek kelime> <sona eklenecek kelime>
+
+4 numaralı sutnunu alır başına ve sonuna kelime ekleyerek yeni satır oluşturur

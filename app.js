@@ -100,6 +100,15 @@ async function asenkronAkis(){
           }else if (komutArr[1] == "md5") {
             /* sutun eklemek istiyor demektir */
             add  += sutunArasiIsaret + md5(item[komutArr[2] - 1]);
+          }else if (komutArr[1] == "left") {
+            /* sutun eklemek istiyor demektir */
+            add  += sutunArasiIsaret + komutArr[3].trim() + item[komutArr[2] - 1];
+          }else if (komutArr[1] == "right") {
+            /* sutun eklemek istiyor demektir */
+            add  += sutunArasiIsaret + item[komutArr[2] - 1] + komutArr[3].trim();
+          }else if (komutArr[1] == "center") {
+            /* sutun eklemek istiyor demektir */
+            add  += sutunArasiIsaret + komutArr[3].trim() + item[komutArr[2] - 1] + komutArr[4].trim();
           }
         }
       }
