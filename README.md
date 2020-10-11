@@ -29,3 +29,12 @@ sutunları 3 2 1 şeklinde sıralamış oldu örnek kullanım aşağıdaki gibi 
 -g grupndandırma için kullanılacak 4. sutunu guplandır demek
 
 > excel-cli a.xlsx -a , -s 3 2 1
+
+
+> -f
+
+filtreleme yani arama için yapacağız
+
+> -f 4 konya
+
+4. sutun konya olanları al demek

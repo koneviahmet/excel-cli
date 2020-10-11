@@ -20,6 +20,7 @@ let sutunArasiIsaret  = ",";
 let secilenStunlar    = [];
 let groupBy           = 0;
 let groupByArr        = [];
+let yazDurum          = true;
 
 /* girilen değerlerden ilk üçünü silelim */
 process.argv.splice(0,3);
@@ -80,23 +81,32 @@ async function asenkronAkis(){
 
 
 
+
+
+
+
+      /* gruplandırmaya bakalım */
       if (groupBy) {
         let groupByText = item[groupBy - 1].trim();
 
         if (groupByArr.indexOf(groupByText) == -1) {
           /* daha önce eklenmemiş ise ekleyelim */
-
-          genelText += rows.length - 1 != ix ? altText + "\n" : altText;
           groupByArr.push(groupByText);
+        }else{
+          yazDurum = false;
         }
-      }else{
-
-        /* groupBy aktif değil ekle gitsin*/
-        genelText += rows.length - 1 != ix ? altText + "\n" : altText;
-
       }
 
 
+      
+
+
+
+      if (yazDurum) {
+        genelText += rows.length - 1 != ix ? altText + "\n" : altText;
+      }
+
+      yazDurum = true;
     });
 
     /*
