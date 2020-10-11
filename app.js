@@ -90,19 +90,16 @@ async function asenkronAkis(){
         if (komutArr[0] == "add") {
           /* gruplama yapmak istiyor demektir.*/
           if (komutArr[1] == "kelime") {
-            console.log("kelime ekleniyor..");
             /* kelime eklemek istiyor demektir.*/
             let eklenenKelimeArr = komutArr;
             eklenenKelimeArr.splice(0,2);
             add += sutunArasiIsaret + eklenenKelimeArr.filter(item => item.length > 0).join(" ").trim();
           }else if (komutArr[1] == "sutun") {
-            console.log("sutun ekleniyor..");
             /* sutun eklemek istiyor demektir */
             add  += sutunArasiIsaret + item[komutArr[2] - 1];
           }else if (komutArr[1] == "md5") {
             /* sutun eklemek istiyor demektir */
-            add  += sutunArasiIsaret + md5(item[komutArr[2] - 1]) + "----";
-            console.log(komutArr[2]);
+            add  += sutunArasiIsaret + md5(item[komutArr[2] - 1]);
           }
         }
       }
@@ -111,12 +108,12 @@ async function asenkronAkis(){
       /* seçilen sutunları ekleyelim */
       let altText = "";
       secilenStunlar.forEach((itemSutun, i) => {
-
           altText += secilenStunlar.length - 1 != i ? item[itemSutun - 1] + sutunArasiIsaret : item[itemSutun - 1];
-          altText += add;
-
         //console.log("satır  " + itemSutun, item[itemSutun - 1]);
       });
+
+      /* sona eklenmek istenilenleri ekleyelim */
+      altText += add;
 
 
 
