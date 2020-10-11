@@ -38,3 +38,15 @@ filtreleme yani arama için yapacağız
 > -f 4 KONYA
 
 4. sutun KONYA olanları al demek
+
+> -add
+
+satırın sonuna ekleme yapmak için bu parametreyi kullanacağız. bu parametre alt parametreler alacak
+
+> -add kelime <eklencek kelime>
+
+satır sonuna herhangi bir kelime eklemek için kullanacağız
+
+> -add sutun 4
+
+sonunda 4 numaralı sutunu ekle demek

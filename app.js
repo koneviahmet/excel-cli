@@ -24,6 +24,8 @@ let araKelime         = "";
 let araKelimeArr      = [];
 let groupByArr        = [];
 let yazDurum          = true;
+let add               = "";
+
 
 
 /* girilen değerlerden ilk üçünü silelim */
@@ -81,18 +83,35 @@ async function asenkronAkis(){
 
     rows.forEach((item, ix) => {
 
+
+
+      /* add komutunu burada çalıştıralım */
+      for (let komut of altKomutlar) {
+        let komutArr  = komut.split('*');
+        if (komutArr[0] == "add") {
+          /* gruplama yapmak istiyor demektir.*/
+          if (komutArr[1] == "kelime") {
+            /* kelime eklemek istiyor demektir.*/
+            let eklenenKelimeArr = komutArr;
+            eklenenKelimeArr.splice(0,2);
+            add += sutunArasiIsaret + eklenenKelimeArr.filter(item => item.length > 0).join(" ").trim();
+          }else if (komutArr[1] == "sutun") {
+            /* sutun eklemek istiyor demektir */
+            add  += sutunArasiIsaret + item[komutArr[2] - 1];
+          }
+        }
+      }
+
+
+
       let altText = "";
       secilenStunlar.forEach((itemSutun, i) => {
 
           altText += secilenStunlar.length - 1 != i ? item[itemSutun - 1] + sutunArasiIsaret : item[itemSutun - 1];
+          altText += add;
 
         //console.log("satır  " + itemSutun, item[itemSutun - 1]);
       });
-
-
-
-
-
 
 
       /* gruplandırmaya bakalım */
@@ -116,14 +135,12 @@ async function asenkronAkis(){
           }
       }
 
-
-
-
       if (yazDurum) {
         genelText += rows.length - 1 != ix ? altText + "\n" : altText;
       }
 
       yazDurum = true;
+      add = "";
     });
 
     /*
