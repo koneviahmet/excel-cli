@@ -114,7 +114,7 @@ async function asenkronAkis(){
       });
 
 
-      
+
       /* gruplandırmaya bakalım */
       if (groupBy) {
         let groupByText = item[groupBy - 1].trim();
