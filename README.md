@@ -35,6 +35,6 @@ sutunları 3 2 1 şeklinde sıralamış oldu örnek kullanım aşağıdaki gibi 
 
 filtreleme yani arama için yapacağız
 
-> -f 4 konya
+> -f 4 KONYA
 
-4. sutun konya olanları al demek
+4. sutun KONYA olanları al demek

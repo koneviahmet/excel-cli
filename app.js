@@ -19,8 +19,12 @@ let txtYol            = cliDizin + "/" + txtName;
 let sutunArasiIsaret  = ",";
 let secilenStunlar    = [];
 let groupBy           = 0;
+let araSutun          = 0;
+let araKelime         = "";
+let araKelimeArr      = [];
 let groupByArr        = [];
 let yazDurum          = true;
+
 
 /* girilen değerlerden ilk üçünü silelim */
 process.argv.splice(0,3);
@@ -55,6 +59,13 @@ async function asenkronAkis(){
       groupBy = komutArr[1];
 
 
+    }else if (komutArr[0] == "f") {
+      /* gruplama yapmak istiyor demektir.*/
+      araSutun  = komutArr[1];
+      araKelimeArr = [...komutArr];
+
+      araKelimeArr.splice(0,2);
+      araKelime = araKelimeArr.join(" ").trim();
     }
 
 
@@ -64,7 +75,6 @@ async function asenkronAkis(){
   console.log("exelName", txtName);
   console.log("sutun arası işaret", sutunArasiIsaret);
   console.log("seçilen sutunlar", secilenStunlar);
-
 
 
   await readXlsxFile(txtName).then((rows) => {
@@ -98,7 +108,14 @@ async function asenkronAkis(){
       }
 
 
-      
+      /* bir şeyler arayacak demektir.*/
+      if (araSutun) {
+          let sutunText = item[araSutun - 1].trim();
+          if (araKelime != sutunText) {
+            yazDurum = false;
+          }
+      }
+
 
 
 
