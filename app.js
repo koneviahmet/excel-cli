@@ -103,7 +103,7 @@ async function asenkronAkis(){
       }
 
 
-
+      /* seçilen sutunları ekleyelim */
       let altText = "";
       secilenStunlar.forEach((itemSutun, i) => {
 
@@ -114,6 +114,7 @@ async function asenkronAkis(){
       });
 
 
+      
       /* gruplandırmaya bakalım */
       if (groupBy) {
         let groupByText = item[groupBy - 1].trim();
